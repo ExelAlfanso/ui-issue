@@ -6,6 +6,8 @@ public class RefreshUI : MonoBehaviour
 {
     [SerializeField] private RectTransform root;
 
+
+
     private void OnEnable()
     {
         if (root == null)
@@ -15,7 +17,10 @@ public class RefreshUI : MonoBehaviour
 
         StartCoroutine(RefreshNextFrame());
     }
-
+    public void StartRefresh()
+    {
+        StartCoroutine(RefreshNextFrame());
+    }
     private IEnumerator RefreshNextFrame()
     {
         yield return null;
