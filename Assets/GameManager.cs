@@ -32,11 +32,7 @@ public class GameManager : MonoBehaviour
     public void EnableRefreshUI()
     {
         refresherUIEnabledText.text = "Refresher UI is " + (lotteryUI.GetComponent<RefreshUI>().enabled ? "Enabled" : "Disabled");
-        var lotteryRefreshUIs = lotteryUI.GetComponentsInChildren<RefreshUI>(true);
-        foreach (var refreshUI in lotteryRefreshUIs)
-        {
-            refreshUI.enabled = !refreshUI.enabled;
-        }
+        lotteryUI.GetComponent<RefreshUI>().enabled = !lotteryUI.GetComponent<RefreshUI>().enabled;
     }
 
 }
